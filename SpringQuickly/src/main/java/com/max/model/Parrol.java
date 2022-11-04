@@ -4,15 +4,15 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("KIKI")
 public class Parrol {
 
-	private String name;
+	private String name = "KIKI";
 
-	@PostConstruct
-	public void init() {
-		this.name = "KIKI";
-	}
+//	@PostConstruct
+//	public void init() {
+//		this.name = "KIKI";
+//	}
 	
 	public Parrol() {}
 	

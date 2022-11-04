@@ -1,13 +1,16 @@
 package com.max.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Book {
 
 	private String name;
-	private String author;
+	private Author author;
 	
 	public Book() {}
 
-	public Book(String name, String author) {
+	public Book(String name, Author author) {
 		super();
 		this.name = name;
 		this.author = author;
@@ -21,11 +24,11 @@ public class Book {
 		this.name = name;
 	}
 
-	public String getAuthor() {
+	public Author getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(Author author) {
 		this.author = author;
 	}
 
