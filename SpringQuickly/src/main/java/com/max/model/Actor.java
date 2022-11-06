@@ -1,5 +1,8 @@
 package com.max.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Actor {
 
 	private String name;

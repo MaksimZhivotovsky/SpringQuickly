@@ -22,13 +22,16 @@ public class SpringQuicklyApplication {
 		Action film = contex.getBean("actionFilm", Action.class);
 		Action theatre = contex.getBean("actionTheatre", Action.class);
 		
-		FilmServise filmServise = contex.getBean(FilmServise.class);
-		TheatreServise theatreServise = contex.getBean(TheatreServise.class);
+		FilmServise filmServise = contex.getBean("film", FilmServise.class);
+		TheatreServise theatreServise = contex.getBean("theatre",TheatreServise.class);
 		
-		Author actor = contex.getBean(Author.class);
-		Author author = contex.getBean(Author.class);
+		Author actor = contex.getBean("Достоевский", Author.class);
+		Author author = contex.getBean("Достоевский", Author.class);
 		
 		System.out.println(filmServise.getActor().equals(theatreServise.getActor()));
 		System.out.println(actor.equals(author));
+		
+		Author author2 = new Author();
+		System.out.println(author2.getBook());
 	}
 }

@@ -3,9 +3,12 @@ package com.max.config;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
 
+import com.max.aspect.LoggAspect;
 import com.max.model.Action;
 import com.max.model.Actor;
 import com.max.model.Author;
@@ -15,9 +18,16 @@ import com.max.servise.FilmServise;
 import com.max.servise.TheatreServise;
 
 @Configuration
+@EnableAspectJAutoProxy
+@ComponentScan("com")
 public class ProgectConfig {
+	
+	@Bean(name = "aspect1")
+	public LoggAspect aspect() {
+		return new LoggAspect();
+	}
 
-	@Bean
+	@Bean(name = "Поречинков")
 	Actor actor() {
 		var actor = new Actor();
 		actor.setName("Поречинков");
