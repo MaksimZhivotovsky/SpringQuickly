@@ -21,11 +21,6 @@ import com.max.servise.TheatreServise;
 @EnableAspectJAutoProxy
 @ComponentScan("com")
 public class ProgectConfig {
-	
-	@Bean(name = "aspect1")
-	public LoggAspect aspect() {
-		return new LoggAspect();
-	}
 
 	@Bean(name = "Поречинков")
 	Actor actor() {

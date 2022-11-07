@@ -8,6 +8,7 @@ import com.max.model.Actor;
 import com.max.model.Author;
 import com.max.servise.FilmServise;
 import com.max.servise.TheatreServise;
+import com.max.test.TestAspect;
 
 public class SpringQuicklyApplication {
 
@@ -33,5 +34,7 @@ public class SpringQuicklyApplication {
 		
 		Author author2 = new Author();
 		System.out.println(author2.getBook());
+		TestAspect testAspect = contex.getBean(TestAspect.class);
+		testAspect.test();
 	}
 }

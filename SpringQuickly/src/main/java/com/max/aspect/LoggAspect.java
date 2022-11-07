@@ -16,7 +16,7 @@ public class LoggAspect {
 	
 	private Logger logger = Logger.getLogger(LoggAspect.class.getName());
 	
-	@Pointcut("within(com.max.model.*)")
+	@Pointcut("execution( * com.max.test.*.*(..))")
 	public void test() {}
 	
 	@Around("test()")
