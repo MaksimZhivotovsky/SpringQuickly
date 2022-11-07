@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+ <head>
+	 <meta charset="UTF-8">
+	 <title>Home Page</title>
+ </head>
+ <body>
+	 <h1>Books</h1>
+	 <h2>View books</h2>
+	 <table>
+		 <tr>
+			 <th>BOOK NAME</th>
+			 <th>BOOK AUTHOR</th>
+			 <th>BOOK PAGES</th>
+		 </tr>
+		 <tr th:each="book: ${books}" >
+			 <td th:text="${book.name}"></td>
+			 <td th:text="${book.author}"></td>
+			 <td th:text="${book.pages}"></td>
+		 </tr>
+	 </table>
+	 
+	 <h2>Add a book</h2>
+	 <form action="/books" method="POST">
+		 Name: <input
+		 type="text"
+		 name="name"><br />
+		 
+		 Author: <input
+		 type="text"
+		 name="author"><br />
+		 
+		 Pages: <input
+		 type="number"
+		 step="any"
+		 name="pages"><br />
+		 <button type="submit">Add book</button>
+	 </form>
+ </body>
+</html>
