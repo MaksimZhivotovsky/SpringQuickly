@@ -17,7 +17,7 @@ public class BookRepository {
 	private final JdbcTemplate jdbcTemplate;
 	
 	public void storeBook(Book book) {
-		String sql = "INSERT INTO books VALUES (?, ?, ?)";
+		String sql = "INSERT INTO bookss VALUES (?, ?, ?)";
 		
 		jdbcTemplate.update(sql,
 				book.getId(),
@@ -27,7 +27,7 @@ public class BookRepository {
 	}
 	
 	public List<Book> findAllBooks() {
-		String sql = "SELECT * FROM books";
+		String sql = "SELECT * FROM bookss";
 		
 		RowMapper<Book> bookMapper = (b, i) -> {
 			Book rowObject = new Book();
