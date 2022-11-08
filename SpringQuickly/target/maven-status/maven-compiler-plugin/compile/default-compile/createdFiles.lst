@@ -1,0 +1,4 @@
+com\max\model\Book.class
+com\max\RestController\HelloController.class
+com\max\SpringQuicklyApplication.class
+com\max\RestController\BookController.class
