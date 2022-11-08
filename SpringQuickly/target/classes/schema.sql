@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS books (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name varchar(50) NOT NULL,
+ author varchar(50) NOT NULL
+);
