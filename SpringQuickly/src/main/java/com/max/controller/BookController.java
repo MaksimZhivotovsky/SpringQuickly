@@ -1,7 +1,5 @@
 package com.max.controller;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,12 +23,12 @@ public class BookController {
 	
 	@PostMapping
 	public void storeBook(@RequestBody Book book) {
-		bookRepository.storeBook(book);
+		bookRepository.save(book);
 	}
 	
 	@GetMapping
-	public List<Book> findBooks() {
-		return bookRepository.findAllBooks();
+	public Iterable<Book> findBooks() {
+		return transferService.getAllBooks();
 	}
 	
 	@PostMapping("/transfer")
@@ -40,4 +38,5 @@ public class BookController {
 				request.getReceiverBookId(),
 				request.getPages());
 	}
+	
 }
